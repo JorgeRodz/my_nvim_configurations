@@ -21,6 +21,16 @@ call plug#end()
 "————————————————————————————————————— Plugins —————————————————————————————————————"
 
 
+
+"——————————————------------------ Shortcuts key maps ------------------————————————————"
+"---------- tabs ----------"
+nnoremap th  :tabfirst<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+"——————————————------------------ Shortcuts key maps ------------------————————————————"
+
+
 "—————————————— github-nvim-theme configuration ————————————————"
 " Example config in VimScript
 " NOTE: Configuration needs to be set BEFORE loading the color scheme with `colorscheme` command
