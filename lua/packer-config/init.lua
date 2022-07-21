@@ -17,4 +17,7 @@ return require('packer').startup(function()
 
   -- Git
   use 'lewis6991/gitsigns.nvim'
+
+  -- Tabs - buffers
+  use 'romgrk/barbar.nvim'
 end)
