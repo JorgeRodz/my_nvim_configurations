@@ -1,0 +1,7 @@
+require('settings')
+require('mappings')
+require('colorschemes-config.monokaipro')
+require('packer-config')
+require('nvim-tree-config')
+require('feline-config.feline')
+require('gitsigns-config')
