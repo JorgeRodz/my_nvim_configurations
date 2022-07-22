@@ -15,7 +15,11 @@ vim.g.mapleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
+
+---------------------- Normal ----------------------
+-- Save
+keymap("n", "<C-s>", ":w<CR>", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -38,19 +42,27 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
+
+---------------------- Visual ----------------------
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
--- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Plugins --
+
+---------------------- Insert ----------------------
+
+-- Press jk fast to enter
+keymap("i", "jk", "<ESC>", opts)
+
+-- Save and go to normal mode
+keymap("i", "<C-s>", "<ESC>:w<CR>", opts)
+
+---------------------- Plugins ----------------------
 
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
