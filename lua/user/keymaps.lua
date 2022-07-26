@@ -47,20 +47,27 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
-
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
 
 ---------------------- Insert ----------------------
 
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 
--- Save and go to normal mode
-keymap("i", "<C-s>", "<ESC>:w<CR>", opts)
+-- Save file
+keymap("i", "<C-s>", "<ESC>:w<CR> i", opts)
+
+-- Undo
+keymap("i", "<f2>", "<ESC>u i", opts)
+-- Redo
+keymap("i", "<f3>", "<ESC> <C-r> i", opts)
+
+-- delete line
+keymap("i", "<C-d>", "<ESC>dd i", opts)
+
 
 ---------------------- Plugins ----------------------
 
