@@ -8,10 +8,7 @@ local servers = {
   "cssls",
   "html",
   "tsserver",
-  "pyright",
-  "bashls",
-  "jsonls",
-  "yamlls",
+  "stylelint_lsp"
 }
 
 lsp_installer.setup()
