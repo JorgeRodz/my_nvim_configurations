@@ -32,6 +32,14 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
+-- up/down line
+keymap("n", "<M-j>", "ddp", opts) -- move line below
+keymap("n", "<M-k>", "dd<UP><S-p>", opts) -- move line above
+
+-- jump to by paragraph
+keymap("n", "<M-[>", "<S-{>", opts) -- move line above
+keymap("n", "<M-]>", "<S-}>", opts) -- move line above
+
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
@@ -66,7 +74,7 @@ keymap("i", "<f2>", "<ESC>u i", opts)
 keymap("i", "<f3>", "<ESC> <C-r> i", opts)
 
 -- delete line
-keymap("i", "<C-d>", "<ESC>dd i", opts)
+keymap("i", "<C-S-d>", "<ESC>dd i", opts)
 
 
 ---------------------- Plugins ----------------------
