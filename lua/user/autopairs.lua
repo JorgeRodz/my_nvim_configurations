@@ -5,6 +5,16 @@ if not status_ok then
 end
 
 npairs.setup {
+  fast_wrap = {
+      map = '<M-e>',
+      chars = { '{', '[', '(', '"', "'" },
+      pattern = [=[[%'%"%)%>%]%)%}%,]]=],
+      end_key = '$',
+      keys = 'qwertyuiopzxcvbnmasdfghjkl',
+      check_comma = true,
+      highlight = 'Search',
+      highlight_grey='Comment'
+    },
   check_ts = true, -- treesitter integration
   disable_filetype = { "TelescopePrompt" },
 }
