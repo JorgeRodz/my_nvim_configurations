@@ -17,6 +17,12 @@ vim.g.mapleader = " "
 
 
 ---------------------- Normal ----------------------
+-- Disable arrow keys
+keymap("n", "<up>", "<Nop>", opts)
+keymap("n", "<Down>", "<Nop>", opts)
+keymap("n", "<Left>", "<Nop>", opts)
+keymap("n", "<Right>", "<Nop>", opts)
+
 -- Save
 keymap("n", "<C-s>", ":w<CR>", opts)
 
