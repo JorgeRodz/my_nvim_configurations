@@ -1,0 +1,46 @@
+{
+  "Class boilerplate": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName}",
+      "  # *- Class variables -*",
+      "  # Class variables can only by obtain by returning it from a method, more often by a Class method",
+      "  @@${2:my_class_variable} = ${3:value}",
+      "",
+      "  # * getter & setter",
+      "  # attr_accessor :instance_variable",
+      "",
+      "  # * getter",
+      "  # attr_reader :instance_variable",
+      "",
+      "  # * setter",
+      "  # attr_writer :instance_variable   # self keyword to call a setter",
+      "",
+      "  # Constructor function",
+      "  def initialize(${4:param})",
+      "    # *- Instance Variables -*",
+      "    @${4:instancle_variable_name} = ${4:param}",
+      "  end",
+      "",
+      "  # *- Instance methods -*",
+      "  def my_instance_method",
+      "    # code here",
+      "  end",
+      "",
+      "  # *- Class methods -*",
+      "  def self.my_class_method",
+      "    # code here",
+      "  end",
+      "end"
+    ],
+    "description": "Class boilerplate"
+  },
+  "if": {
+		"prefix": "iff",
+		"body": [
+			"if ${1:hola}",
+			"\t$0",
+			"end"
+		]
+	}
+}
