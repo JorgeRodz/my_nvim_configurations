@@ -34,13 +34,5 @@
       "end"
     ],
     "description": "Class boilerplate"
-  },
-  "if": {
-		"prefix": "iff",
-		"body": [
-			"if ${1:hola}",
-			"\t$0",
-			"end"
-		]
-	}
+  }
 }

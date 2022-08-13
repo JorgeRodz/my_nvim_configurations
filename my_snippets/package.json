@@ -1,28 +1,34 @@
 {
-	"name": "example-snippets",
+  "name": "example-snippets",
   "engines": {
     "vscode": "^1.11.0"
   },
-	"contributes": {
-		"snippets": [
-			{
-				"language": [
-					"all"
-				],
-				"path": "./snippets/all.json"
-			},
-			{
-				"language": [
-					"lua"
-				],
-				"path": "./lua.json"
-			},
+  "contributes": {
+    "snippets": [
       {
-				"language": [
-					"ruby"
-				],
-				"path": "./ruby.json"
-			}
-		]
-	}
+        "language": [
+          "all"
+        ],
+        "path": "./snippets/all.json"
+      },
+      {
+        "language": [
+          "lua"
+        ],
+        "path": "./lua.json"
+      },
+      {
+        "language": [
+          "ruby"
+        ],
+        "path": "./ruby.json"
+      },
+      {
+        "language": [
+          "javascript"
+        ],
+        "path": "./javascript.json"
+      }
+    ]
+  }
 }
