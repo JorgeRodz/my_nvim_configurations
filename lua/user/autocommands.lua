@@ -3,8 +3,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
   callback = function()
     vim.cmd [[
-      nnoremap <silent> <buffer> q :close<CR> 
-      set nobuflisted 
+      nnoremap <silent> <buffer> q :close<CR>
+      set nobuflisted
     ]]
   end,
 })
@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 
 -- ColorizerToggle on load
 vim.api.nvim_create_autocmd("FileType", {
-    command = "ColorizerToggle",
+  command = "ColorizerToggle",
 })
 
 -- Highlight Yanked Text
@@ -49,3 +49,11 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
     vim.highlight.on_yank { higroup = "Visual", timeout = 200 }
   end,
 })
+
+-- Remove blank spaces on save
+vim.cmd([[
+  au FocusLost * :wa
+  autocmd BufWritePre * :%s/\s\+$//e
+  autocmd BufWritePre * :%s/\t/  /e
+  match ErrorMsg '\s\+$'
+]])
