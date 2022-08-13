@@ -14,10 +14,20 @@ nvim_tree.setup {
   auto_reload_on_write = true,
   update_focused_file = {
     enable = true,
-    update_cwd = true,
+    update_cwd = false,
   },
   renderer = {
-    root_folder_modifier = ":t",
+    highlight_opened_files = "all",
+    root_folder_modifier = ":~",
+    indent_markers = {
+      enable = true,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        item = "│ ",
+        none = " ",
+      },
+    },
     icons = {
       glyphs = {
         default = "",
@@ -37,7 +47,7 @@ nvim_tree.setup {
           staged = "✓",
           unmerged = "",
           renamed = "➜",
-          untracked = "u",
+          untracked = "?",
           deleted = "",
           ignored = "◌",
         },
