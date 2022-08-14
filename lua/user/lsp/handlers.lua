@@ -1,3 +1,5 @@
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
 local M = {}
 
 local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -23,7 +25,7 @@ M.setup = function()
   end
 
   local config = {
-    virtual_text = true, -- disable virtual text
+    virtual_text = false, -- disable virtual text
     signs = {
       active = signs, -- show signs
     },
@@ -86,6 +88,20 @@ M.on_attach = function(client, bufnr)
     return
   end
   illuminate.on_attach(client)
+
+
+  if client.supports_method("textdocument/formatting") then
+      vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+      vim.api.nvim_create_autocmd("bufwritepre", {
+          group = augroup,
+          buffer = bufnr,
+          callback = function()
+              -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+              vim.lsp.buf.formatting_sync()
+          end,
+      })
+  end
+
 end
 
 return M
