@@ -154,6 +154,11 @@ _G.packer_plugins = {
     path = "/home/jarf/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/jarf/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   ["monokai-pro.nvim"] = {
     loaded = true,
     path = "/home/jarf/.local/share/nvim/site/pack/packer/start/monokai-pro.nvim",
