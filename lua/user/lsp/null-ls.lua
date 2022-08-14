@@ -18,6 +18,8 @@ null_ls.setup {
     },
     formatting.stylua,
     diagnostics.flake8,
-    diagnostics.eslint_d,
+    diagnostics.eslint,
+    -- diagnostics.rubocop,
+    -- formatting.rubocop
   },
 }
