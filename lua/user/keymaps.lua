@@ -104,6 +104,9 @@ keymap("i", "<M-l>", "<Right>", opts)
 
 ---------------------- Plugins ----------------------
 
+-- markdown-preview
+keymap('n', '<leader>mp', '<Cmd>MarkdownPreviewToggle<CR>', opts)
+
 -- bufferline
 keymap('n', '<leader>1', '<Cmd>BufferLineGoToBuffer 1<CR>', opts)
 keymap('n', '<leader>2', '<Cmd>BufferLineGoToBuffer 2<CR>', opts)
