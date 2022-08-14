@@ -25,4 +25,5 @@ require "user.colorizer"
 require "user.tagalong"
 require "user.nvim-treesitter-endwise"
 require "user.code-runner"
+require "user.markdown-preview"
 
