@@ -6,7 +6,7 @@ end
 code_runner.setup {
   -- Default setup
   mode = "toggleterm",
-  focus = false,
+  focus = true,
   filetype = {
     ruby = "ruby"
   }
