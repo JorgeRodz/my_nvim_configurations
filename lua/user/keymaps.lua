@@ -17,8 +17,11 @@ vim.g.mapleader = " "
 
 
 ---------------------- Normal ----------------------
+
 -- Enter
 keymap("n", "<Enter>", "i<Enter><Esc>", opts)
+-- Add line below
+keymap("n", "<M-Enter>", "o<Esc>", opts)
 
 -- Copy line below
 keymap("n", "<M-2>", "yyp", opts)
@@ -40,14 +43,15 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
-keymap("n", "<C-M-j>", ":resize -2<CR>", opts)
-keymap("n", "<C-M-k>", ":resize +2<CR>", opts)
+keymap("n", "<C-M-k>", ":resize -2<CR>", opts)
+keymap("n", "<C-M-j>", ":resize +2<CR>", opts)
 keymap("n", "<C-M-l>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-M-h>", ":vertical resize +2<CR>", opts)
 
 -- up/down line
 keymap("n", "<M-j>", "ddp", opts) -- move line below
 keymap("n", "<M-k>", "dd<UP><S-p>", opts) -- move line above
+
 
 -- jump to by paragraph
 keymap("n", "<M-[>", "<S-{>", opts) -- move line above
@@ -76,7 +80,6 @@ keymap("n", "<S-Tab>", "v<<ESC>^", opts)
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
--- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -134,6 +137,7 @@ keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
 
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>tf", ":NvimTreeFocus<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
@@ -153,7 +157,7 @@ keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
 keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
 keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
-keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
+keymap("n", "<leader>do", "<cmd>lua require'dap'.step_out()<cr>", opts)
 keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
