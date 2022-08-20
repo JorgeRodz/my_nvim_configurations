@@ -61,6 +61,7 @@ return packer.startup(function(use)
   use { "AndrewRadev/tagalong.vim" }  -- To Automatically change the close tag
   use { "CRAG666/code_runner.nvim" }  -- To Automatically run code
   use { 'iamcco/markdown-preview.nvim' } -- To visualize markdown
+  use { 'rmagatti/auto-session' }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }
