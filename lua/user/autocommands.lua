@@ -57,3 +57,10 @@ vim.cmd([[
   autocmd BufWritePre * :%s/\t/  /e
   match ErrorMsg '\s\+$'
 ]])
+
+-- Persist folding text
+vim.cmd([[
+  autocmd!
+  autocmd BufWinLeave * silent! mkview
+  autocmd BufWinEnter * silent! loadview
+]])
