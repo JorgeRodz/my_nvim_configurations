@@ -148,6 +148,7 @@ ins_left {
     }
     return { fg = mode_color[vim.fn.mode()] }
   end,
+  padding = { right = 1 }
 }
 
 ins_left {
@@ -160,11 +161,13 @@ ins_left {
   'filename',
   cond = conditions.buffer_not_empty,
   color = { fg = colors.magenta, gui = 'bold' },
+  padding = { left = 0, right = 1 }
 }
 
-ins_left { 'location' }
+ins_left { 'location', padding = { right = 0 } }
 
-ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
+ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' }, padding = { right = 0 }
+ }
 
 ins_left {
   'diagnostics',
