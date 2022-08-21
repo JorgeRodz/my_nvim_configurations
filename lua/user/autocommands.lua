@@ -38,11 +38,6 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   end,
 })
 
--- ColorizerToggle on load
-vim.api.nvim_create_autocmd("FileType", {
-  command = "ColorizerToggle",
-})
-
 -- Highlight Yanked Text
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   callback = function()
@@ -50,17 +45,39 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   end,
 })
 
--- Remove blank spaces on save
-vim.cmd([[
-  au FocusLost * :wa
-  autocmd BufWritePre * :%s/\s\+$//e
-  autocmd BufWritePre * :%s/\t/  /e
-  match ErrorMsg '\s\+$'
-]])
+-- Remove blank space on save
+vim.api.nvim_create_autocmd({ "User" }, {
+  callback = function()
+    vim.cmd([[
+      au focuslost * :wa
+      autocmd bufwritepre * :%s/\s\+$//e
+      autocmd bufwritepre * :%s/\t/  /e
+      match errormsg '\s\+$'
+    ]])
+  end,
+})
 
 -- Persist folding text
-vim.cmd([[
-  autocmd!
-  autocmd BufWinLeave * silent! mkview
-  autocmd BufWinEnter * silent! loadview
-]])
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+  callback = function()
+    vim.cmd([[
+      autocmd bufWinLeave * silent! :mkview
+      autocmd bufwinenter * silent! :loadview
+    ]])
+  end,
+})
+
+-- Remove blank spaces on save
+-- vim.cmd([[
+--   au FocusLost * :wa
+--   autocmd BufWritePre * :%s/\s\+$//e
+--   autocmd BufWritePre * :%s/\t/  /e
+--   match ErrorMsg '\s\+$'
+-- ]])
+--
+-- -- Persist folding text
+-- vim.cmd([[
+--   autocmd!
+--   autocmd BufWinLeave * silent! mkview
+--   autocmd BufWinEnter * silent! loadview
+-- ]])
