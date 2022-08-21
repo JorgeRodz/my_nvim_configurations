@@ -38,3 +38,6 @@ vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
 vim.opt.relativenumber = true
+vim.opt.foldmethod = "manual"
+vim.opt.foldenable = false
+vim.opt.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
