@@ -20,6 +20,6 @@ null_ls.setup {
     diagnostics.flake8,
     diagnostics.eslint,
     -- diagnostics.rubocop,
-    -- formatting.rubocop
+    formatting.rubocop
   },
 }

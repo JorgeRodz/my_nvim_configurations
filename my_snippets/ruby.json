@@ -34,5 +34,10 @@
       "end"
     ],
     "description": "Class boilerplate"
+  },
+  "Block comment": {
+    "prefix": "=begin",
+    "body": ["=begin", "${0:comments}", "=end"],
+    "description": "Class boilerplate"
   }
 }
