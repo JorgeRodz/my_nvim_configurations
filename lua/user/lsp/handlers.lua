@@ -82,13 +82,24 @@ M.on_attach = function(client, bufnr)
     client.resolved_capabilities.document_formatting = false
   end
 
+  if client.name == "solargraph" then
+    client.resolved_capabilities.document_formatting = false
+  end
+
+  if client.name == "html" then
+    client.resolved_capabilities.document_formatting = false
+  end
+
+  if client.name == "stylelint_lsp" then
+    client.resolved_capabilities.document_formatting = false
+  end
+
   lsp_keymaps(bufnr)
   local status_ok, illuminate = pcall(require, "illuminate")
   if not status_ok then
     return
   end
   illuminate.on_attach(client)
-
 
   if client.supports_method("textdocument/formatting") then
       vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
