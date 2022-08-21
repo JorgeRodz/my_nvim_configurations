@@ -5,4 +5,5 @@ end
 
 colorizer.setup {
   -- Default setup
+  '*';
 }
